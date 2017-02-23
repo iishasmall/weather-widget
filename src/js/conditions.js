@@ -29,6 +29,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Mostly Cloudy":
         case "Scattered Clouds":
         case "Overcast":
+        case "Haze":
             // clouds      
             if(time === "dawn" || time === "dusk" || time === "day"){
 
