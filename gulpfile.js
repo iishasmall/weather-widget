@@ -56,15 +56,6 @@ gulp.task('sass', function(){
 gulp.task('compress', function() {
  return gulp.src(jsSource)
  .pipe(gulp.dest(jsOutput));
-// var scripts = gulp.src('./src/js/**/*.js');
- 
-   // var bundle = scripts.pipe(clone())
-    //  .pipe(concat('bundle.js'));
-//gulp.src('./src/js/**/*.js')
-   // .pipe(cloneSink)                //<- clone objects streaming through this point 
-  //  .pipe(concat(jsSource))
- //   .pipe(cloneSink.tap())          //<- output cloned objects + bundle.js 
-   // .pipe(gulp.dest(jsOutput));       //<- saves bundle.js + original files in one pass 
 });
 
 gulp.task('serve', ['htmlmin','sass','compress'], function(){
