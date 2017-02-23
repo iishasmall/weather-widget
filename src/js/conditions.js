@@ -2,6 +2,7 @@
 
 function initConditions (data) { 
    
+   
 var date = new Date();
 var time;
 
@@ -31,12 +32,12 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
             // clouds      
             if(time === "dawn" || time === "dusk" || time === "day"){
 
-                makeImg("../svg/cloud.svg");
+                makeImg("svg/cloud.svg");
             }else if(time === "night"){
-                makeImg("../svg/cloudy-night.svg");
+                makeImg("svg/cloudy-night.svg");
             }else{
 
-                makeImg("../svg/cloud.svg");
+                makeImg("svg/cloud.svg");
             }
         break;
 
@@ -44,11 +45,11 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Calm":
     
            if(time === "dawn" || time === "dusk" || time === "day"){
-                makeImg("../svg/sun.svg");
+                makeImg("svg/sun.svg");
             }else if (time === "night"){
-                makeImg("../svg/moon.svg");
+                makeImg("svg/moon.svg");
             }else{
-                makeImg("../svg/sun.svg");
+                makeImg("svg/sun.svg");
             }
             
         break;
@@ -61,7 +62,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Fog":
         // fog
        
-        makeImg("../svg/cloud.svg");
+        makeImg("svg/cloud.svg");
         break;
 
         case "Hail":
@@ -72,7 +73,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Light Hail Showers":
         case "Heavy Hail Showers":
         // hail
-        makeImg("../svg/hail.svg");
+        makeImg("svg/hail.svg");
         break;
 
         case "Rain":
@@ -82,35 +83,35 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Light Rain Showers":
         case "Heavy Rain Showers":
         // rain
-        makeImg("../svg/rain.svg");
+        makeImg("svg/rain.svg");
         break;
 
         case "Thunderstorm":
         case "Light Thunderstorms and Rain":
         case "Heavy Thunderstorms and Rain":
         // thunderstorms and rain
-        makeImg("../svg/storm.svg");
+        makeImg("svg/storm.svg");
         break;
 
         case "Light Thunderstorms and Snow":
         case "Heavy Thunderstorms and Snow":
         // thunderstorms and snow
-         makeImg("../svg/hail.svg");
+         makeImg("svg/hail.svg");
         break;
 
         case "Snow":
         //snow
-        makeImg("../svg/snowflake.svg");
+        makeImg("svg/snowflake.svg");
         break;
 
         default:
 
          if(time === "dawn" || time === "dusk" || time === "day"){
-                makeImg("../svg/sun.svg");
+                makeImg("svg/sun.svg");
             }else if (time === "night"){
-                makeImg("../svg/moon.svg");
+                makeImg("svg/moon.svg");
             }else{
-                makeImg("../svg/sun.svg");
+                makeImg("svg/sun.svg");
             }
 
          break;
