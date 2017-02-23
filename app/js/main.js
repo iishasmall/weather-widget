@@ -1,1 +1,71 @@
-var api="http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_York.json",myJSON=$.getJSON(api,function(){console.log("api loaded success!")}).done(function(i){var t=i.current_observation;console.log(t);var e,n,o,l,r,a,d,p;e=t.dewpoint_f,n=t.temp_f,feelslike_f=t.feelslike_f,o=t.precip_today_in,l=t.relative_humidity,r=t.visibility_mi,a=t.wind_mph,d=t.wind_gust_mph,p=t.weather,weather_url=t.forecast_url,city=t.display_location.full,initConditions(p),initHumidity(l,"#humidity"),initPrecip(o,"#precip"),initWind(a,"#wind"),initWindGust(d,"#wind_gust"),initTemp(n,"#temp"),initTempF(feelslike_f,"#temp-f"),initVisibility(r,"#visibility"),initTag(weather_url,"#weather-url"),initCity(city,"#city")}).fail(function(){console.log("weather api not working")});
+
+var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_York.json';
+        
+
+        var myJSON = $.getJSON(api,function(){
+            console.log('api loaded success!');
+        }).done( function(data){
+
+            var data_current = data.current_observation;
+            console.log(data_current);
+            var dewpoint,temp_f,precip,humidity,visibility,wind,wind_gust,weather;
+
+            // DewPoint
+            dewpoint = data_current['dewpoint_f'];
+           // console.log(dewpoint +" - dewpoint");
+
+            //Temperature
+            temp_f = data_current['temp_f'];
+            //console.log(temp_f + " - temperature");
+
+            //Feels like Temperature
+            feelslike_f = data_current['feelslike_f'];
+             //console.log(feelslike_f + " - temperature");
+
+            //Precipitation 
+            precip = data_current['precip_today_in'];
+           // console.log(precip + " - preciptation");
+
+            //Humidity 
+            humidity = data_current['relative_humidity'];
+            //console.log(humidity + " - humidity");
+
+            //Visibility
+            visibility = data_current['visibility_mi'];
+            //console.log(visibility + " - visibility");
+
+            //Wind 
+            wind = data_current['wind_mph'];
+           // console.log(data_current['wind_mph'] + "- wind");
+
+            //Wind Gust 
+            wind_gust = data_current['wind_gust_mph'];
+             //console.log(wind_gust + " - wind gust");
+
+             //Weather 
+             weather = data_current['weather'];
+             //console.log(weather + " - weather");
+
+             //Weather tag URL 
+             weather_url = data_current['forecast_url'];
+             //console.log( weather_url + " - weather");
+
+             //City
+             city = data_current['display_location']['full'];
+            // console.log(city +" - city");
+              
+              
+          initConditions(weather);
+          initHumidity(humidity,'#humidity');
+          initPrecip(precip,'#precip');
+          initWind(wind,'#wind');
+          initWindGust(wind_gust,'#wind_gust');
+          initTemp(temp_f,'#temp');
+          initTempF(feelslike_f,'#temp-f');
+          initVisibility(visibility,'#visibility');
+          initTag(weather_url,'#weather-url');
+          initCity(city,'#city');
+          
+        }).fail(function(){
+                console.log('weather api not working');
+        });

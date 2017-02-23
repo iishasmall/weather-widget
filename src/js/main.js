@@ -1,7 +1,7 @@
 
 var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_York.json';
         
-        
+
         var myJSON = $.getJSON(api,function(){
             console.log('api loaded success!');
         }).done( function(data){

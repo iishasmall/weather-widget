@@ -4,8 +4,16 @@ var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
 var browserSync = require('browser-sync').create();
 var sftp = require('gulp-sftp');
-var minify = require('gulp-minify');
+var jsmin = require('gulp-jsmin');
+var rename = require('gulp-rename');
 var htmlminify = require('gulp-htmlmin');
+var clean = require('gulp-clean');
+var minify = require('gulp-minify');
+var gulpCopy = require('gulp-copy');
+var concat = require('gulp-concat');
+var clone = require('gulp-clone');
+
+var cloneSink = clone.sink();
 
 var sassOptions = {
 	errLogToConsole: true,
@@ -16,8 +24,13 @@ var sassSources = './src/scss/**/*.scss';
 var sassOutput = './app/css';
 var htmlSource = 'src/html/index.html';
 var htmlOutput = './app/'
-var jsSource = './src/js/*.js';
+var jsSource = './src/js/**/*.js';
 var jsOutput = './app/js/';
+
+
+
+
+
 
 
 gulp.task('htmlmin', function() {
@@ -41,16 +54,17 @@ gulp.task('sass', function(){
 });
 
 gulp.task('compress', function() {
-  gulp.src(jsSource)
-    .pipe(minify({
-        ext:{
-            src:jsSource,
-            min:'.js'
-        },
-        exclude: ['tasks'],
-        ignoreFiles: ['.combo.js', '-min.js']
-    }))
-    .pipe(gulp.dest(jsOutput))
+ return gulp.src(jsSource)
+ .pipe(gulp.dest(jsOutput));
+// var scripts = gulp.src('./src/js/**/*.js');
+ 
+   // var bundle = scripts.pipe(clone())
+    //  .pipe(concat('bundle.js'));
+//gulp.src('./src/js/**/*.js')
+   // .pipe(cloneSink)                //<- clone objects streaming through this point 
+  //  .pipe(concat(jsSource))
+ //   .pipe(cloneSink.tap())          //<- output cloned objects + bundle.js 
+   // .pipe(gulp.dest(jsOutput));       //<- saves bundle.js + original files in one pass 
 });
 
 gulp.task('serve', ['htmlmin','sass','compress'], function(){
@@ -59,6 +73,7 @@ gulp.task('serve', ['htmlmin','sass','compress'], function(){
 		server: './app',
 		browser: "google chrome"
 	})
+
 
 	gulp.watch(sassSources, ['sass'])
 	gulp.watch(jsSource, ['compress'])

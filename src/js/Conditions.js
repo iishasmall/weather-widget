@@ -28,22 +28,21 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Mostly Cloudy":
         case "Scattered Clouds":
         case "Overcast":
-            // clouds 
-            console.log("cloudy graphic here");
-         
+            // clouds      
             if(time === "dawn" || time === "dusk" || time === "day"){
 
                 makeImg("../svg/cloud.svg");
-            }else{
+            }else if(time === "night"){
                 makeImg("../svg/cloudy-night.svg");
+            }else{
+
+                makeImg("../svg/cloud.svg");
             }
         break;
 
         case "Clear":
         case "Calm":
-        
-        var date = new Date();
-        console.log(time +"- the time is")
+    
            if(time === "dawn" || time === "dusk" || time === "day"){
                 makeImg("../svg/sun.svg");
             }else if (time === "night"){
