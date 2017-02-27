@@ -32,7 +32,7 @@ function initVisibility(data,id){
 
 //Weather URL Tag
 function initTag(data,id){
-    $(id).html("<h1>"+"Powered by: "+"<a href='"+data+"'target='_blank'>"+data+"</a>"+"</h1>"); 
+    $(id).html("<a href='"+data+"'target='_blank'><img src='img/wu_logo.png'/></a>"); 
 }
 
 //City

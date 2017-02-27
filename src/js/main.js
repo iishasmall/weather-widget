@@ -14,9 +14,7 @@ var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_
             data_current = data.current_observation;
 
             updateInterval = 300000;
-
-           console.log(data_current);
-           
+        
             // DewPoint
             dewpoint = data_current['dewpoint_f'];
            // console.log(dewpoint +" - dewpoint");
@@ -60,7 +58,6 @@ var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_
              //City
              city = data_current['display_location']['full'];
             // console.log(city +" - city");
-              
               
           initConditions(weather);
           initHumidity(humidity,'#humidity');

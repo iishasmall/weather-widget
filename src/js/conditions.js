@@ -7,7 +7,7 @@ var date = new Date();
 var time;
 
 var sunrise = [06, 23];
-var sunset = [18, 49];
+var sunset = [18, 20];
 var sunrise_m = sunrise[0] * 60 + sunrise[1]
 var sunset_m = sunset[0] * 60 + sunset[1]
 var now = date.getHours() * 60 + date.getMinutes();
@@ -33,34 +33,13 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Light Haze":
         case "Heavy Haze":
             // clouds      
-            
-            if(time === "dawn" || time === "dusk" || time === "day"){
-                changeBg('img/partlysunny.png');
-                makeImg("svg/cloud.svg");
-                
-            }else if(time === "night"){
-                makeImg("svg/cloudy-night.svg");
-                changeBg('img/cloudynight.png');
-            }else{
-
-                makeImg("svg/cloud.svg");
-                changeBg('img/partlysunny.png');
-            }
+            setDayTimeCloudy(time)
+       
         break;
 
         case "Clear":
         case "Calm":
-    
-           if(time === "dawn" || time === "dusk" || time === "day"){
-                makeImg("svg/sun.svg");
-            }else if (time === "night"){
-                makeImg("svg/moon.svg");
-                changeBg('img/night.png');
-            }else{
-                makeImg("svg/sun.svg");
-                 changeBg('img/sunny.png');
-            }
-            
+        setDayTime(time);       
         break;
 
         case "Shallow Fog":
@@ -123,6 +102,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Heavy Thunderstorms and Rain":
         // thunderstorms and rain
         makeImg("svg/storm.svg");
+        changeBg('img/storm.png');
         break;
 
         case "Light Thunderstorms and Snow":
@@ -160,16 +140,8 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
 
         default:
 
-         if(time === "dawn" || time === "dusk" || time === "day"){
-                makeImg("svg/sun.svg");
-            }else if (time === "night"){
-                makeImg("svg/moon.svg");
-                changeBg('img/night.png');
-            }else{
-                makeImg("svg/sun.svg");
-                changeBg('img/sunny.png');
-            }
-
+        setDayTime(time);
+       
          break;
 
 
@@ -188,4 +160,56 @@ function changeBg(img){
 
     $('.container-bg').css("background","url("+img+")");
 }
+
+
+function setDayTime(time){
+
+    switch (time){
+
+        case "dawn":
+        case "day":
+            makeImg("svg/sun.svg");
+            changeBg('img/sunny.png');
+        break;
+
+        case "dusk":
+        case "night":
+            makeImg("svg/moon.svg");
+            changeBg('img/night.png');
+        break;
+
+        default:
+            makeImg("svg/sun.svg");
+            changeBg('img/sunny.png');
+         break;
+    }
+
+
+}
+
+function setDayTimeCloudy(time){
+    switch(time){
+        
+        case "dawn":
+        case "day":
+            changeBg('img/partlysunny.png');
+            makeImg("svg/cloud.svg");
+        break;
+
+        case "dusk":
+        case "night":
+            makeImg("svg/cloudy-night.svg");
+            changeBg('img/cloudynight.png');
+        break;
+
+        default:
+          makeImg("svg/cloud.svg");
+          changeBg('img/partlysunny.png');
+         break;
+    }
+
+}
+
+
+
 
