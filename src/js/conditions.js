@@ -35,16 +35,16 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
             // clouds      
             
             if(time === "dawn" || time === "dusk" || time === "day"){
-                changeBg('../img/partlysunny.png');
+                changeBg('img/partlysunny.png');
                 makeImg("svg/cloud.svg");
                 
             }else if(time === "night"){
                 makeImg("svg/cloudy-night.svg");
-                changeBg('../img/cloudynight.png');
+                changeBg('img/cloudynight.png');
             }else{
 
                 makeImg("svg/cloud.svg");
-                changeBg('../img/partlysunny.png');
+                changeBg('img/partlysunny.png');
             }
         break;
 
@@ -55,10 +55,10 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
                 makeImg("svg/sun.svg");
             }else if (time === "night"){
                 makeImg("svg/moon.svg");
-                changeBg('../img/night.png');
+                changeBg('img/night.png');
             }else{
                 makeImg("svg/sun.svg");
-                 changeBg('../img/sunny.png');
+                 changeBg('img/sunny.png');
             }
             
         break;
@@ -78,7 +78,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         // fog
        
         makeImg("svg/fog.svg");
-        changeBg('../img/fog.png');
+        changeBg('img/fog.png');
         break;
 
         case "Hail":
@@ -93,7 +93,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Heavy Small Hail Showers":
         // hail
         makeImg("svg/hail.svg");
-        changeBg('../img/snow.png');
+        changeBg('img/snow.png');
         break;
 
         case "Rain":
@@ -112,7 +112,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Heavy Drizzle":
         // rain
         makeImg("svg/rain.svg");
-        changeBg('../img/rain.png');
+        changeBg('img/rain.png');
         break;
 
         case "Squalls":
@@ -134,7 +134,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Snow Blowing Snow Mist":
         // thunderstorms and snow
          makeImg("svg/hail.svg");
-         changeBg('../img/snow.png');
+         changeBg('img/snow.png');
         break;
 
         case "Snow":
@@ -155,7 +155,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Heavy Ice Pellets":
         //snow
         makeImg("svg/snowflake.svg");
-        changeBg('../img/snow.png');
+        changeBg('img/snow.png');
         break;
 
         default:
@@ -164,10 +164,10 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
                 makeImg("svg/sun.svg");
             }else if (time === "night"){
                 makeImg("svg/moon.svg");
-                changeBg('../img/night.png');
+                changeBg('img/night.png');
             }else{
                 makeImg("svg/sun.svg");
-                changeBg('../img/sunny.png');
+                changeBg('img/sunny.png');
             }
 
          break;
