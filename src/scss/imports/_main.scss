@@ -74,15 +74,9 @@ a:visited,a:hover{
 
 
 .container-bg{
-   background: rgba(203,96,179,1);
-background: -moz-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 13%, rgba(168,0,119,1) 55%, rgba(219,54,164,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(203,96,179,1)), color-stop(13%, rgba(193,70,161,1)), color-stop(55%, rgba(168,0,119,1)), color-stop(100%, rgba(219,54,164,1)));
-background: -webkit-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 13%, rgba(168,0,119,1) 55%, rgba(219,54,164,1) 100%);
-background: -o-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 13%, rgba(168,0,119,1) 55%, rgba(219,54,164,1) 100%);
-background: -ms-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 13%, rgba(168,0,119,1) 55%, rgba(219,54,164,1) 100%);
-background: linear-gradient(to bottom, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 13%, rgba(168,0,119,1) 55%, rgba(219,54,164,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#db36a4', GradientType=0 );
+    background: url('../img/sunny.png') no-repeat;
 }
+
 
 .container-shadow{
     box-shadow: 5px 5px 5px 1px rgba(0,0,0,.25);

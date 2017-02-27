@@ -18,12 +18,12 @@ function initWindGust(data,id){
 }
 // Temperature 
 function initTemp(data,id){
-    $(id).html("<h1 class="+'"temp-txt"'+">"+Math.round(data)+"<sup>&deg;</sup>"+"</h1>"); 
+    $(id).html("<h1 class="+'"temp-txt"'+">"+data+"<sup>&deg;</sup>"+"</h1>"); 
 }
 
 // Temperature feels like
 function initTempF(data,id){
-    $(id).html("<h1>"+"Feels Like: "+Math.round(data)+"<sup>&deg;</sup>"+"</h1>"); 
+    $(id).html("<h1>"+"Feels Like: "+data+"<sup>&deg;</sup>"+"</h1>"); 
 }
 //Visibility
 function initVisibility(data,id){
@@ -37,5 +37,5 @@ function initTag(data,id){
 
 //City
 function initCity(data,id){
-    $(id).html("<h1>"+data+" Weather"+"</h1>"); 
+    $(id).html("<h1>"+data+"</h1>"); 
 }
