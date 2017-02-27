@@ -12,6 +12,7 @@ var minify = require('gulp-minify');
 var gulpCopy = require('gulp-copy');
 var concat = require('gulp-concat');
 var clone = require('gulp-clone');
+var uglify = require('gulp-uglifyjs');
 
 var cloneSink = clone.sink();
 
@@ -25,12 +26,7 @@ var sassOutput = './app/css';
 var htmlSource = 'src/html/index.html';
 var htmlOutput = './app/'
 var jsSource = './src/js/**/*.js';
-var jsOutput = './app/js/';
-
-
-
-
-
+var jsOutput = './app/js';
 
 
 gulp.task('htmlmin', function() {
@@ -54,8 +50,9 @@ gulp.task('sass', function(){
 });
 
 gulp.task('compress', function() {
- return gulp.src(jsSource)
- .pipe(gulp.dest(jsOutput));
+ gulp.src(jsSource)
+    .pipe(uglify('main.min.js'))
+    .pipe(gulp.dest(jsOutput))
 });
 
 gulp.task('serve', ['htmlmin','sass','compress'], function(){
@@ -69,6 +66,7 @@ gulp.task('serve', ['htmlmin','sass','compress'], function(){
 	gulp.watch(sassSources, ['sass'])
 	gulp.watch(jsSource, ['compress'])
 	gulp.watch(htmlSource, ['htmlmin'])
+	gulp.watch(jsSource).on('change', browserSync.reload);
 	gulp.watch(htmlSource).on('change', browserSync.reload);
 });
 

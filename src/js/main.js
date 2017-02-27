@@ -1,15 +1,22 @@
 
+
+
+function getWeather(){
+
 var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_York.json';
         
-
         var myJSON = $.getJSON(api,function(){
-            console.log('api loaded success!');
         }).done( function(data){
 
-            var data_current = data.current_observation;
-            console.log(data_current);
-            var dewpoint,temp_f,precip,humidity,visibility,wind,wind_gust,weather;
+          
+            var data_current,dewpoint,temp_f,precip,humidity,visibility,wind,wind_gust,weather,updateInterval;
 
+            data_current = data.current_observation;
+
+            updateInterval = 300000;
+
+           console.log(data_current);
+           
             // DewPoint
             dewpoint = data_current['dewpoint_f'];
            // console.log(dewpoint +" - dewpoint");
@@ -65,7 +72,14 @@ var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_
           initVisibility(visibility,'#visibility');
           initTag(weather_url,'#weather-url');
           initCity(city,'#city');
-          
+          setTimeout(getWeather,updateInterval);
+         
         }).fail(function(){
                 console.log('weather api not working');
         });
+
+        
+}
+
+ getWeather();
+ 

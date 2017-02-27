@@ -7,7 +7,7 @@ var date = new Date();
 var time;
 
 var sunrise = [06, 23];
-var sunset = [20, 49];
+var sunset = [18, 49];
 var sunrise_m = sunrise[0] * 60 + sunrise[1]
 var sunset_m = sunset[0] * 60 + sunset[1]
 var now = date.getHours() * 60 + date.getMinutes();
@@ -30,6 +30,8 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Scattered Clouds":
         case "Overcast":
         case "Haze":
+        case "Light Haze":
+        case "Heavy Haze":
             // clouds      
             if(time === "dawn" || time === "dusk" || time === "day"){
 
@@ -59,11 +61,17 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Patches of Fog":
         case "Partial Fog":
         case "Freezing Fog":
+        case "Light Freezing Fog":
+        case "Heavy Freezing Fog":
         case "Mist":
+        case "Light Mist":
+        case "Heavy Mist":
         case "Fog":
+        case "Light Fog":
+        case "Heavy Fog":
         // fog
        
-        makeImg("svg/cloud.svg");
+        makeImg("svg/fog.svg");
         break;
 
         case "Hail":
@@ -73,21 +81,35 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
         case "Hail Showers":
         case "Light Hail Showers":
         case "Heavy Hail Showers":
+        case "Small Hail Showers":
+        case "Light Small Hail Showers":
+        case "Heavy Small Hail Showers":
         // hail
         makeImg("svg/hail.svg");
         break;
 
         case "Rain":
+        case "Light Rain":
+        case "Heavy Rain":
         case "Rain Mist":
         case "Light Rain Mist":
         case "Heavy Rain Mist":
         case "Light Rain Showers":
         case "Heavy Rain Showers":
+        case "Rain Showers":
+        case "Light Rain Showers":
+        case "Heavy Rain Showers":
+        case "Drizzle":
+        case "Light Drizzle":
+        case "Heavy Drizzle":
         // rain
         makeImg("svg/rain.svg");
         break;
 
+        case "Squalls":
         case "Thunderstorm":
+        case "Light Thunderstorm":
+        case "Heavy Thunderstorm":
         case "Light Thunderstorms and Rain":
         case "Heavy Thunderstorms and Rain":
         // thunderstorms and rain
@@ -96,11 +118,31 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
 
         case "Light Thunderstorms and Snow":
         case "Heavy Thunderstorms and Snow":
+        case "Thunderstorms and Ice Pellets":
+        case "Freezing Rain":
+        case "Light Freezing Rain":
+        case "Heavy Freezing Rain":
+        case "Snow Blowing Snow Mist":
         // thunderstorms and snow
          makeImg("svg/hail.svg");
         break;
 
         case "Snow":
+        case "Snow Showers":
+        case "Light Snow Showers":
+        case "Heavy Snow Showers":
+        case "Snow Blowing Snow Mist":
+        case "Light Snow Blowing Snow Mist":
+        case "Heavy Snow Blowing Snow Mist":
+        case "Snow Grains":
+        case "Light Snow Grains":
+        case "Heavy Snow Grains":
+        case "Ice Crystals":
+        case "Light Ice Crystals":
+        case "Heavy Ice Crystals":
+        case "Ice Pellets":
+        case "Light Ice Pellets":
+        case "Heavy Ice Pellets":
         //snow
         makeImg("svg/snowflake.svg");
         break;
@@ -125,6 +167,7 @@ if (now > sunset_m - 60 && now <= sunset_m + 60) {
 
 function makeImg(img){
     
-     $("#imgContainer").append("<img src='"+img+"'/>");
+     $("#imgContainer").html("<img src='"+img+"'/>");
 
 }
+
