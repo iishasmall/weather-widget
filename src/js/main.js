@@ -13,9 +13,6 @@ var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_
 
             data_current = data.current_observation;
 
-            updateInterval = 300000;
-        
-            console.log(data_current);
 
             // DewPoint
             dewpoint = data_current['dewpoint_f'];
@@ -72,7 +69,7 @@ var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_
           initTag(weather_url,'#weather-url');
           initCity(city,'#city');
 
-          setInterval(getWeather,updateInterval);
+          
         
         }).fail(function(){
                 console.log('weather api not working');
