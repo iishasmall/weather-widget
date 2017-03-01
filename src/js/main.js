@@ -3,7 +3,7 @@
 
 function getWeather(){
 
-var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_York.json';
+var api = 'http://api.wunderground.com/api/4ba60343a7656feb/conditions/q/NY/New_York.json';
         
         var myJSON = $.getJSON(api,function(){
         }).done( function(data){
@@ -73,6 +73,8 @@ var api = 'http://api.wunderground.com/api/ddbb440f680c0141/conditions/q/NY/New_
         
         }).fail(function(){
                 console.log('weather api not working');
+
+                initErrorMsg(' The Weather API has exceded number of hits allowed in a 24 hour period please check in 24 hours!');
         });
 
         

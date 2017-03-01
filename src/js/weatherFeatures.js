@@ -39,3 +39,9 @@ function initTag(data,id){
 function initCity(data,id){
     $(id).html("<h1>"+data+"</h1>"); 
 }
+
+
+function initErrorMsg(msg){
+     $('#temp').html("<h1>"+msg+"</h1>"); 
+     
+}
