@@ -16,47 +16,47 @@ function getWeather() {
 
                 // DewPoint
                 dewpoint = data_current['dewpoint_f'];
-                // console.log(dewpoint +" - dewpoint");
+
 
                 //Temperature
                 temp_f = data_current['temp_f'];
-                //console.log(temp_f + " - temperature");
+
 
                 //Feels like Temperature
                 feelslike_f = data_current['feelslike_f'];
-                //console.log(feelslike_f + " - temperature");
+
 
                 //Precipitation 
                 precip = data_current['precip_today_in'];
-                // console.log(precip + " - preciptation");
+
 
                 //Humidity 
                 humidity = data_current['relative_humidity'];
-                //console.log(humidity + " - humidity");
+
 
                 //Visibility
                 visibility = data_current['visibility_mi'];
-                //console.log(visibility + " - visibility");
+
 
                 //Wind 
                 wind = data_current['wind_mph'];
-                // console.log(data_current['wind_mph'] + "- wind");
+
 
                 //Wind Gust 
                 wind_gust = data_current['wind_gust_mph'];
-                //console.log(wind_gust + " - wind gust");
+
 
                 //Weather 
                 weather = data_current['weather'];
-                //console.log(weather + " - weather");
+
 
                 //Weather tag URL 
                 weather_url = data_current['forecast_url'];
-                //console.log( weather_url + " - weather");
+
 
                 //City
                 city = data_current['display_location']['full'];
-                // console.log(city +" - city");
+
 
                 initConditions(weather);
                 //init Weather Features
